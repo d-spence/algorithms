@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Search Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Binary Search</h1>
+    <p>
+      This is a demo for the binary search algorithm.
+      It uses a 10x10 grid to display the time it takes to search for a given number (1-100).
+      Below, it will display the number of steps and the total time taken.
+      You can also run a simple search for comparison.
+    </p>
+  </header>
+
+  <div class="settings">
+    <div>
+      <button id="binary-search-btn">Start Binary Seach</button>
+      <button id="simple-search-btn">Start Simple Seach</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+    <input type="number" value="10" min="1" max="100" id="input-number" autofocus>
+    <select name="step-time" id="step-time">
+      <option value="50">50ms</option>
+      <option value="100">100ms</option>
+      <option value="200" selected>200ms</option>
+      <option value="500">500ms</option>
+      <option value="1000">1000ms</option>
+    </select>
+  </div>
+
+  <div id="search-grid">
+    <!-- Grid squares will be generated here -->
+  </div>
+
+  <div class="info">
+    <div>Steps: <span id="steps-value"></span></div>      
+    <div>Time: <span id="time-value"></span></div>
+    <div>Guesses: <span id="guesses-string"></span></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

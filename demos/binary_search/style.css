@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 500px;
+  margin: 20px 40px;
+}
+
+.settings {
+  margin: 20px 40px;
+}
+
+.settings div {
+  margin-bottom: 10px;
+}
+
+.info {
+  width: 500px;
+  border: 1px solid black;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 20px 40px;
+}
+
+.info div {
+  padding: 10px 20px;
+}
+
+#search-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 3px;
+  width: 500px;
+  height: 500px;
+  margin: 20px 40px;
+}
+
+#search-grid div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid black;
+}
+
+#guesses-string {
+  font-size: 0.9rem;
+  /* font-weight: normal; */
+}
