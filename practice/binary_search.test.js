@@ -1,6 +1,5 @@
 const binarySearch = require('./binary_search');
 
-
 const numsArray1 = Array.from(Array(100), (n, i) => i + 1); // [1, 2, ..., 100]
 const numsArray2 = Array.from(Array(4000000), (n, i) => i + 1);
 
