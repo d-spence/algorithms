@@ -11,4 +11,24 @@ const countdown = (t, stop=0) => {
   countdown(t - 1, stop);
 }
 
-countdown(time, stop);
+// countdown(time, stop);
+
+// const charArray = Array.from('abcdefghijklmnopqrstuvwxyz');
+const charArray = Array.from('ACGT');
+let keysArray = [];
+
+const createKeys = (source, len=3, string='') => {
+  if (string.length >= len) {
+    keysArray.push(string);
+    return;
+  }
+
+  for (let i = 0; i < source.length; i++) {
+    const current = source[i];
+    createKeys(source, len, string + current);
+  }
+}
+
+createKeys(charArray, 3);
+
+console.log(keysArray, keysArray.length);
