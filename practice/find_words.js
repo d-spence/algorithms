@@ -16,17 +16,13 @@ const findWords = (word, string='') => {
   }
 }
 
-// Word class containing various properties of a given word
+// Word class containing various properties for a given word
 class Word {
-  constructor(text, initialize=true) {
+  constructor(text) {
     this.text = text;
     this.length = text.length;
     this.count = {};
     this.anagrams = [];
-    initialize && this.init();
-  }
-
-  init = () => {
     this.getCount();
     this.getAnagrams();
   }
@@ -40,12 +36,13 @@ class Word {
   getAnagrams = (string='') => {
     if (string.length >= this.length) {
       for (let i = 0; i < this.length; i++) {
-        if (string.match(new RegExp(this.text[i], 'g'))?.length > this.count[this.text[i]]) {
-          return;
-        }
+        // verify that string contains the correct number of each character
+        if (string.match(new RegExp(this.text[i], 'g'))?.length > this.count[this.text[i]]) return;
       }
+      // verify that string isn't already in anagrams array
+      if (this.anagrams.includes(string)) return;
+
       this.anagrams.push(string);
-      return;
     }
   
     for (let i = 0; i < this.length; i++) {
@@ -55,9 +52,9 @@ class Word {
   }
 }
 
-const str = 'data';
+const str = 'drive';
 
-const word = new Word(str, true);
+const word = new Word(str);
 console.log(word);
 
 // let wordsArray = [];
